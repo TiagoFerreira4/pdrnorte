@@ -1,0 +1,52 @@
+---
+import { siteConfig } from '../data/site';
+
+interface Props {
+	label: string;
+	message?: string;
+	href?: string;
+	variant?: 'primary' | 'secondary';
+	class?: string;
+}
+
+const {
+	label,
+	message = 'Olá! Vim pelo site da PDR Norte e gostaria de um orçamento.',
+	href,
+	variant = 'primary',
+	class: className = '',
+} = Astro.props;
+
+const baseClasses =
+	'inline-flex items-center gap-2 rounded-full px-6 py-3 text-sm font-semibold tracking-[0.08em] transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue/60 focus-visible:ring-offset-2 focus-visible:ring-offset-[#05070b]';
+
+const variantClasses = {
+	primary:
+		'border border-brand-blue/50 bg-brand-blue text-[#111111] shadow-[0_10px_30px_rgba(244,197,66,0.28)] hover:border-brand-blue hover:bg-brand-blue-strong',
+	secondary:
+		'border border-white/14 bg-white/6 text-white hover:border-white/22 hover:bg-white/10',
+};
+
+const targetHref =
+	href ??
+	`https://wa.me/${siteConfig.whatsappNumber}?text=${encodeURIComponent(message)}`;
+---
+
+<a
+	href={targetHref}
+	target="_blank"
+	rel="noreferrer"
+	class:list={[baseClasses, variantClasses[variant], className]}
+>
+	<svg
+		aria-hidden="true"
+		viewBox="0 0 24 24"
+		class="h-5 w-5"
+		fill="currentColor"
+	>
+		<path
+			d="M19.05 4.91A9.82 9.82 0 0 0 12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.46 1.33 4.97L2 22l5.3-1.39a9.88 9.88 0 0 0 4.73 1.2h.01c5.46 0 9.91-4.45 9.91-9.91a9.8 9.8 0 0 0-2.9-6.99Zm-7.01 15.23h-.01a8.2 8.2 0 0 1-4.17-1.14l-.3-.18-3.14.82.84-3.06-.2-.31a8.18 8.18 0 0 1-1.26-4.36c0-4.53 3.69-8.22 8.23-8.22a8.14 8.14 0 0 1 5.82 2.41 8.16 8.16 0 0 1 2.4 5.81c0 4.54-3.69 8.23-8.21 8.23Zm4.51-6.17c-.25-.13-1.47-.72-1.69-.8-.23-.08-.39-.13-.56.13-.17.25-.64.8-.79.96-.15.17-.3.19-.55.07-.25-.13-1.08-.39-2.05-1.25-.76-.68-1.28-1.52-1.43-1.77-.15-.25-.02-.38.11-.5.11-.11.25-.3.38-.45.13-.15.17-.25.25-.42.08-.17.04-.31-.02-.44-.06-.13-.56-1.35-.77-1.86-.2-.48-.4-.42-.56-.43h-.48c-.17 0-.44.06-.67.31-.23.25-.88.86-.88 2.1 0 1.23.9 2.42 1.03 2.59.13.17 1.76 2.68 4.27 3.76.6.26 1.06.41 1.43.52.6.19 1.14.16 1.56.1.48-.07 1.47-.6 1.68-1.18.21-.58.21-1.07.15-1.18-.06-.11-.23-.17-.48-.29Z"
+		></path>
+	</svg>
+	<span>{label}</span>
+</a>

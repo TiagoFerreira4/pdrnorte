@@ -1,11 +1,232 @@
 ---
-import Welcome from '../components/Welcome.astro';
+import ServiceCard from '../components/ServiceCard.astro';
+import WhatsAppButton from '../components/WhatsAppButton.astro';
+import {
+	beforeAfterCategories,
+	contactMessages,
+	serviceCards,
+	siteConfig,
+	testimonials,
+} from '../data/site';
 import Layout from '../layouts/Layout.astro';
-
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
 ---
 
-<Layout>
-	<Welcome />
+<Layout
+	title={siteConfig.defaultTitle}
+	description={siteConfig.defaultDescription}
+>
+	<section id="inicio" class="scroll-mt-28">
+		<div class="hero-panel overflow-hidden">
+			<div class="mx-auto flex min-h-[100svh] max-w-7xl items-start px-4 pt-28 pb-16 sm:px-6 sm:pt-32 lg:px-8 lg:pt-36 lg:pb-24">
+					<div class="max-w-3xl">
+						<p class="eyebrow mb-5">Recife • Martelinho de Ouro • Películas • Estética</p>
+						<h1 class="max-w-2xl text-4xl font-semibold tracking-[0.01em] text-white sm:text-5xl lg:text-7xl">
+							Martelinho de Ouro, Películas e Estética Automotiva em Recife
+						</h1>
+						<p class="mt-6 max-w-2xl text-base leading-7 text-slate-200 sm:text-lg">
+							Cuidamos do seu veículo com acabamento profissional, preservando a
+							originalidade, a estética e o valor do seu carro.
+						</p>
+						<div class="mt-8 flex flex-col gap-3 sm:flex-row">
+							<WhatsAppButton
+								label="Solicitar orçamento pelo WhatsApp"
+								message={contactMessages.quote}
+							/>
+							<a
+								class="inline-flex items-center justify-center rounded-full border border-white/15 bg-white/6 px-6 py-3 text-sm font-semibold tracking-[0.08em] text-white transition hover:border-brand-blue/50 hover:bg-white/10"
+								href="#servicos"
+							>
+								Conhecer serviços
+							</a>
+						</div>
+					</div>
+			</div>
+		</div>
+	</section>
+
+	<section id="servicos" class="scroll-mt-28">
+		<div class="mx-auto max-w-7xl px-4 py-20 sm:px-6 lg:px-8">
+			<div class="max-w-2xl">
+				<p class="eyebrow">Nossos serviços</p>
+				<h2 class="mt-4 text-3xl font-semibold text-white sm:text-4xl">
+					Soluções automotivas com apresentação premium e foco em confiança.
+				</h2>
+				<p class="mt-4 text-base leading-7 text-slate-300">
+					A base abaixo já separa os principais serviços da PDR Norte para facilitar
+					uma futura expansão em páginas internas.
+				</p>
+			</div>
+			<div class="mt-10 grid gap-5 md:grid-cols-2 xl:grid-cols-3">
+				{
+					serviceCards.map((service) => (
+						<ServiceCard
+							badge={service.badge}
+							title={service.title}
+							description={service.description}
+						/>
+					))
+				}
+			</div>
+		</div>
+	</section>
+
+	<section id="window-blue" class="scroll-mt-28">
+		<div class="mx-auto max-w-7xl px-4 pb-20 sm:px-6 lg:px-8">
+			<div class="section-surface hex-surface relative overflow-hidden rounded-[2rem] p-8 sm:p-10 lg:p-14">
+				<div class="relative z-10 grid gap-10 lg:grid-cols-[1fr_20rem] lg:items-end">
+					<div class="max-w-3xl">
+						<p class="eyebrow">Aplicador Window Blue</p>
+						<h2 class="mt-4 text-3xl font-semibold text-white sm:text-4xl">
+							Autoridade visual para destacar películas de alta performance.
+						</h2>
+						<p class="mt-5 max-w-2xl text-base leading-7 text-slate-300">
+							A PDR Norte trabalha com películas de alta performance, oferecendo
+							conforto térmico, privacidade e acabamento premium para o seu
+							veículo.
+						</p>
+					</div>
+					<div class="flex flex-col gap-3">
+						<a
+							class="inline-flex items-center justify-center rounded-full border border-brand-blue/40 bg-brand-blue/12 px-6 py-3 text-sm font-semibold tracking-[0.08em] text-white transition hover:border-brand-blue hover:bg-brand-blue/20"
+							href="#servicos"
+						>
+							Conhecer películas
+						</a>
+						<p class="text-sm leading-6 text-slate-400">
+							Substitua este bloco por conteúdo específico da futura página de
+							películas quando ela for criada.
+						</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<section id="antes-e-depois" class="scroll-mt-28">
+		<div class="mx-auto max-w-7xl px-4 pb-20 sm:px-6 lg:px-8">
+			<div class="flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
+				<div class="max-w-2xl">
+					<p class="eyebrow">Antes e depois</p>
+					<h2 class="mt-4 text-3xl font-semibold text-white sm:text-4xl">
+						Galeria pronta para trocar os placeholders por casos reais.
+					</h2>
+				</div>
+				<p class="max-w-xl text-sm leading-6 text-slate-400">
+					O primeiro card já usa a imagem real adicionada. Os demais continuam com
+					placeholder para troca posterior.
+				</p>
+			</div>
+			<div class="mt-10 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
+				{
+					beforeAfterCategories.map((category) => (
+						<article class="section-surface overflow-hidden rounded-[1.75rem]">
+							<img
+								class="h-56 w-full object-cover"
+								src={category.image}
+								alt={`Imagem da galeria de ${category.title}`}
+								loading="lazy"
+							/>
+							<div class="px-5 py-5">
+								<h3 class="text-xl font-semibold text-white">{category.title}</h3>
+								<p class="mt-2 text-sm leading-6 text-slate-400">
+									{category.description}
+								</p>
+							</div>
+						</article>
+					))
+				}
+			</div>
+		</div>
+	</section>
+
+	<section id="depoimentos" class="scroll-mt-28">
+		<div class="mx-auto max-w-7xl px-4 pb-20 sm:px-6 lg:px-8">
+			<div class="max-w-2xl">
+				<p class="eyebrow">Depoimentos</p>
+				<h2 class="mt-4 text-3xl font-semibold text-white sm:text-4xl">
+					Bloco preparado para futuras avaliações reais.
+				</h2>
+			</div>
+			<div class="mt-10 grid gap-5 lg:grid-cols-3">
+				{
+					testimonials.map((testimonial) => (
+						<article class="section-surface rounded-[1.75rem] p-6">
+							<p class="text-xs font-semibold uppercase tracking-[0.28em] text-amber-300/90">
+								Placeholder
+							</p>
+							<p class="mt-5 text-base leading-7 text-slate-200">
+								“{testimonial.quote}”
+							</p>
+							<div class="mt-6 border-t border-white/10 pt-5">
+								<p class="font-display text-xl font-semibold text-white">
+									{testimonial.name}
+								</p>
+								<p class="mt-1 text-sm text-slate-400">{testimonial.detail}</p>
+							</div>
+						</article>
+					))
+				}
+			</div>
+		</div>
+	</section>
+
+	<section id="localizacao" class="scroll-mt-28">
+		<div class="mx-auto max-w-7xl px-4 pb-20 sm:px-6 lg:px-8">
+			<div class="grid gap-6 lg:grid-cols-[0.82fr_1.18fr]">
+				<div class="section-surface rounded-[2rem] p-8">
+					<p class="eyebrow">Localização</p>
+					<h2 class="mt-4 text-3xl font-semibold text-white sm:text-4xl">
+						Endereço e rota prontos para receber os dados finais da loja.
+					</h2>
+					<p class="mt-5 text-base leading-7 text-slate-300">{siteConfig.address}</p>
+					<p class="mt-4 text-sm leading-6 text-slate-400">
+						Substitua o endereço placeholder e o link do mapa assim que os dados
+						oficiais estiverem confirmados.
+					</p>
+					<a
+						class="mt-8 inline-flex items-center justify-center rounded-full border border-white/15 bg-white/6 px-6 py-3 text-sm font-semibold tracking-[0.08em] text-white transition hover:border-brand-blue/50 hover:bg-white/10"
+						href={siteConfig.mapsUrl}
+						target="_blank"
+						rel="noreferrer"
+					>
+						Ver rota no Google Maps
+					</a>
+				</div>
+				<div class="map-placeholder flex min-h-[22rem] items-center justify-center rounded-[2rem] border border-white/10 p-8 text-center">
+					<div>
+						<p class="font-display text-2xl font-semibold text-white">
+							Embed do Google Maps
+						</p>
+						<p class="mt-3 max-w-md text-sm leading-7 text-slate-300">
+							Placeholder reservado para o iframe do mapa. A troca pode ser feita
+							depois sem alterar a estrutura da seção.
+						</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<section id="contato" class="scroll-mt-28">
+		<div class="mx-auto max-w-7xl px-4 pb-24 sm:px-6 lg:px-8">
+			<div class="section-surface hex-surface rounded-[2rem] px-8 py-10 sm:px-10 lg:px-14 lg:py-14">
+				<div class="flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between">
+					<div class="max-w-2xl">
+						<p class="eyebrow">CTA final</p>
+						<h2 class="mt-4 text-3xl font-semibold text-white sm:text-4xl">
+							Quer avaliar seu veículo?
+						</h2>
+						<p class="mt-4 text-base leading-7 text-slate-300">
+							Envie fotos pelo WhatsApp e receba uma orientação inicial da equipe
+							PDR Norte.
+						</p>
+					</div>
+					<WhatsAppButton
+						label="Chamar no WhatsApp"
+						message={contactMessages.vehiclePhotos}
+					/>
+				</div>
+			</div>
+		</div>
+	</section>
 </Layout>

@@ -1,0 +1,50 @@
+---
+import WhatsAppButton from './WhatsAppButton.astro';
+import { contactMessages, siteConfig } from '../data/site';
+---
+
+<footer class="border-t border-white/8 bg-[#04060a]">
+	<div class="mx-auto grid max-w-7xl gap-10 px-4 py-12 sm:px-6 lg:grid-cols-[1.1fr_0.9fr_0.9fr] lg:px-8">
+		<div class="max-w-md">
+			<p class="font-display text-3xl font-semibold text-white">PDR Norte</p>
+			<p class="mt-4 text-sm leading-7 text-slate-400">
+				Base institucional em Astro com foco em atendimento pelo WhatsApp e
+				apresentação premium dos serviços automotivos.
+			</p>
+			<div class="mt-6">
+				<WhatsAppButton
+					label="Falar com a PDR Norte"
+					message={contactMessages.quote}
+				/>
+			</div>
+		</div>
+
+		<div>
+			<p class="eyebrow">Contato</p>
+			<ul class="mt-4 space-y-3 text-sm text-slate-300">
+				<li>WhatsApp: {siteConfig.whatsappLabel}</li>
+				<li>
+					Instagram:
+					<a
+						class="text-white transition hover:text-brand-blue"
+						href={siteConfig.instagramUrl}
+						target="_blank"
+						rel="noreferrer"
+					>
+						{siteConfig.instagramLabel}
+					</a>
+				</li>
+				<li>Endereço: {siteConfig.address}</li>
+			</ul>
+		</div>
+
+		<div>
+			<p class="eyebrow">Horário placeholder</p>
+			<ul class="mt-4 space-y-3 text-sm text-slate-300">
+				<li>Segunda a sexta: 08h às 18h</li>
+				<li>Sábado: 08h às 12h</li>
+				<li>Substituir estes horários pelos dados oficiais da loja.</li>
+			</ul>
+		</div>
+	</div>
+</footer>

@@ -1,0 +1,71 @@
+---
+import WhatsAppButton from './WhatsAppButton.astro';
+import { contactMessages, navigationItems, siteConfig } from '../data/site';
+---
+
+<header class="sticky top-0 z-50 border-b border-white/8 bg-[#05070bcc]/90 backdrop-blur-xl">
+	<div class="mx-auto flex max-w-7xl items-center justify-between gap-6 px-4 py-4 sm:px-6 lg:px-8">
+		<a href="#inicio" class="flex items-center gap-3 text-white">
+			<span class="flex h-11 w-11 items-center justify-center rounded-2xl border border-brand-blue/30 bg-brand-blue/10 font-display text-lg font-semibold tracking-[0.16em] text-brand-blue">
+				PDR
+			</span>
+			<span>
+				<span class="block font-display text-2xl font-semibold leading-none">PDR Norte</span>
+				<span class="mt-1 block text-xs uppercase tracking-[0.24em] text-slate-400">
+					Recife • Automotivo
+				</span>
+			</span>
+		</a>
+
+		<nav class="hidden items-center gap-6 md:flex">
+			{
+				navigationItems.map((item) => (
+					<a
+						class="text-sm font-medium text-slate-300 transition hover:text-white"
+						href={item.href}
+					>
+						{item.label}
+					</a>
+				))
+			}
+		</nav>
+
+		<div class="hidden md:block">
+			<WhatsAppButton
+				label="Solicitar orçamento"
+				message={contactMessages.quote}
+			/>
+		</div>
+
+		<details class="group relative w-full max-w-max md:hidden">
+			<summary class="flex cursor-pointer list-none items-center gap-3 rounded-full border border-white/10 bg-white/6 px-4 py-2.5 text-sm font-semibold tracking-[0.08em] text-white transition hover:border-white/20 hover:bg-white/10">
+				Menu
+				<span class="text-slate-400 transition group-open:rotate-45">+</span>
+			</summary>
+			<div class="absolute inset-x-4 top-[calc(100%+0.75rem)] rounded-[1.75rem] border border-white/10 bg-[#090d15] p-5 shadow-[0_24px_70px_rgba(0,0,0,0.5)]">
+				<div class="grid gap-3">
+					{
+						navigationItems.map((item) => (
+							<a
+								class="rounded-2xl border border-white/8 bg-white/5 px-4 py-3 text-sm font-medium text-slate-200 transition hover:border-brand-blue/30 hover:text-white"
+								href={item.href}
+							>
+								{item.label}
+							</a>
+						))
+					}
+					<div class="pt-2">
+						<WhatsAppButton
+							label="Solicitar orçamento"
+							message={contactMessages.quote}
+							class="w-full justify-center"
+						/>
+					</div>
+					<p class="text-xs leading-6 text-slate-500">
+						WhatsApp placeholder: {siteConfig.whatsappLabel}
+					</p>
+				</div>
+			</div>
+		</details>
+	</div>
+</header>

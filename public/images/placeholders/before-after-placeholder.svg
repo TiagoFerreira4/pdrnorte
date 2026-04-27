@@ -1,0 +1,27 @@
+<svg width="1200" height="900" viewBox="0 0 1200 900" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="900" fill="#0A0F18"/>
+  <rect width="1200" height="900" fill="url(#paint0_linear)"/>
+  <path d="M0 0H600V900H0V0Z" fill="#101828"/>
+  <path d="M600 0H1200V900H600V0Z" fill="#182438"/>
+  <line x1="600" y1="84" x2="600" y2="816" stroke="#F4C542" stroke-width="4" stroke-dasharray="16 16"/>
+  <g opacity="0.18" stroke="#F5F8FF" stroke-width="2">
+    <path d="M182 123L242 158V227L182 262L122 227V158L182 123Z"/>
+    <path d="M302 123L362 158V227L302 262L242 227V158L302 123Z"/>
+    <path d="M422 123L482 158V227L422 262L362 227V158L422 123Z"/>
+    <path d="M720 126L780 161V230L720 265L660 230V161L720 126Z"/>
+    <path d="M840 126L900 161V230L840 265L780 230V161L840 126Z"/>
+    <path d="M960 126L1020 161V230L960 265L900 230V161L960 126Z"/>
+  </g>
+  <rect x="150" y="340" width="330" height="220" rx="30" fill="#151E2B" stroke="#2B3D59" stroke-width="3"/>
+  <rect x="720" y="340" width="330" height="220" rx="30" fill="#2B2618" stroke="#B28A2A" stroke-width="3"/>
+  <text x="217" y="465" fill="#DCE7F9" font-family="Arial, sans-serif" font-size="52" font-weight="700">ANTES</text>
+  <text x="787" y="465" fill="#F5F9FF" font-family="Arial, sans-serif" font-size="52" font-weight="700">DEPOIS</text>
+  <text x="263" y="735" fill="#8AA6D7" font-family="Arial, sans-serif" font-size="28">Placeholder de imagem</text>
+  <text x="704" y="735" fill="#E3CC88" font-family="Arial, sans-serif" font-size="28">Trocar por foto real</text>
+  <defs>
+    <linearGradient id="paint0_linear" x1="600" y1="0" x2="600" y2="900" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#0A0F18" stop-opacity="0"/>
+      <stop offset="1" stop-color="#0A0F18" stop-opacity="0.46"/>
+    </linearGradient>
+  </defs>
+</svg>

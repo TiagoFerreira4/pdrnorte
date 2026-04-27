@@ -1,0 +1,20 @@
+<svg width="1600" height="900" viewBox="0 0 1600 900" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1600" height="900" fill="#070A10"/>
+  <rect width="1600" height="900" fill="url(#paint0_radial)"/>
+  <g opacity="0.2" stroke="white" stroke-width="2">
+    <path d="M284 110L356 152V236L284 278L212 236V152L284 110Z"/>
+    <path d="M428 110L500 152V236L428 278L356 236V152L428 110Z"/>
+    <path d="M356 236L428 278V362L356 404L284 362V278L356 236Z"/>
+    <path d="M1170 504L1242 546V630L1170 672L1098 630V546L1170 504Z"/>
+    <path d="M1314 504L1386 546V630L1314 672L1242 630V546L1314 504Z"/>
+    <path d="M1242 630L1314 672V756L1242 798L1170 756V672L1242 630Z"/>
+  </g>
+  <rect x="120" y="690" width="540" height="1" fill="white" fill-opacity="0.18"/>
+  <text x="120" y="760" fill="white" fill-opacity="0.78" font-family="Barlow, Arial, sans-serif" font-size="24" letter-spacing="8">ADICIONE A IMAGEM DO HERO DE MARTELINHO AQUI</text>
+  <defs>
+    <radialGradient id="paint0_radial" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(1210 200) rotate(143.337) scale(745.184 426.127)">
+      <stop stop-color="#F4C542" stop-opacity="0.18"/>
+      <stop offset="1" stop-color="#070A10" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+</svg>

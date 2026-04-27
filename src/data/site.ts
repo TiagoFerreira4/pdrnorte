@@ -8,23 +8,28 @@ export const siteConfig = {
 	whatsappLabel: '(81) 9XXXX-XXXX',
 	instagramUrl: 'https://instagram.com/seuinstagram',
 	instagramLabel: '@seuinstagram',
-	address: 'Av. Exemplo, 123 - Recife/PE',
+	address:
+		'Av. Norte Miguel Arraes de Alencar, 1795, Loja 5 e 6 - Espinheiro, Recife - PE, 52021-000',
 	mapsUrl:
-		'https://www.google.com/maps/search/?api=1&query=Av.+Exemplo,+123+-+Recife+PE',
+		'https://www.google.com/maps/search/?api=1&query=Av.%20Norte%20Miguel%20Arraes%20de%20Alencar%2C%201795%2C%20Loja%205%20e%206%20-%20Espinheiro%2C%20Recife%20-%20PE%2C%2052021-000',
 	galleryPlaceholder: '/images/placeholders/before-after-placeholder.svg',
 } as const;
 
 export const navigationItems = [
-	{ label: 'Início', href: '#inicio' },
-	{ label: 'Serviços', href: '#servicos' },
-	{ label: 'Antes e Depois', href: '#antes-e-depois' },
-	{ label: 'Localização', href: '#localizacao' },
-	{ label: 'Contato', href: '#contato' },
+	{ label: 'Início', href: '/#inicio' },
+	{ label: 'Serviços', href: '/#servicos' },
+	{ label: 'Antes e Depois', href: '/#antes-e-depois' },
+	{ label: 'Localização', href: '/#localizacao' },
+	{ label: 'Contato', href: '/#contato' },
 ] as const;
 
 export const contactMessages = {
 	quote:
 		'Olá! Vim pelo site da PDR Norte e gostaria de solicitar um orçamento.',
+	martelinho:
+		'Olá! Vim pela página de Martelinho de Ouro da PDR Norte e gostaria de solicitar um orçamento.',
+	peliculas:
+		'Olá! Vim pela página de películas da PDR Norte e gostaria de solicitar um orçamento.',
 	vehiclePhotos:
 		'Olá! Vim pelo site da PDR Norte e quero enviar fotos do meu veículo para uma orientação inicial.',
 } as const;
@@ -35,12 +40,14 @@ export const serviceCards = [
 		title: 'Martelinho de Ouro / PDR',
 		description:
 			'Remoção de pequenos amassados sem pintura, preservando a originalidade do veículo sempre que possível.',
+		href: '/martelinho-de-ouro',
 	},
 	{
 		badge: 'FILM',
 		title: 'Películas Automotivas',
 		description:
 			'Aplicação de insulfilm, películas térmicas, premium e antivandalismo com acabamento profissional.',
+		href: '/peliculas',
 	},
 	{
 		badge: 'LAT',
@@ -50,21 +57,102 @@ export const serviceCards = [
 	},
 ] as const;
 
+export const martelinhoIndications = [
+	{
+		title: 'Pequenos amassados',
+		description: 'Ideal para danos leves do dia a dia.',
+	},
+	{
+		title: 'Batidas de porta',
+		description: 'Marcas comuns em estacionamentos.',
+	},
+	{
+		title: 'Chuva de granizo',
+		description: 'Recupera vários pontos sem repintar.',
+	},
+	{
+		title: 'Sem quebra de pintura',
+		description: 'Melhor cenário para o PDR.',
+	},
+] as const;
+
+export const martelinhoLimitations = [
+	{ title: 'Pintura danificada' },
+	{ title: 'Amassados muito profundos' },
+	{ title: 'Lataria rasgada ou vincada forte' },
+	{ title: 'Peças muito deformadas' },
+] as const;
+
+export const martelinhoBenefits = [
+	'Preserva a pintura original',
+	'Evita repintura',
+	'Mantém o valor do carro',
+	'Processo mais rápido',
+	'Menos invasivo',
+	'Excelente acabamento quando indicado corretamente',
+] as const;
+
+export const martelinhoGallery = {
+	videoPlaceholder: '/images/placeholders/video-martelinho.mp4',
+	comparison: [
+		{
+			title: 'Antes',
+			image: '/images/placeholders/before.jpeg',
+			description: 'Espaço para a foto real do dano antes da correção.',
+		},
+		{
+			title: 'Depois',
+			image: '/images/placeholders/after.jpeg',
+			description: 'Espaço para a foto real após o trabalho de PDR.',
+		},
+	],
+} as const;
+
+export const peliculasOptions = [
+	{
+		badge: 'WB',
+		title: 'Window Blue',
+		description:
+			'Linha em destaque na PDR Norte para quem busca apresentação premium, conforto e um acabamento mais sofisticado no veículo.',
+		highlights: ['Cancela 99% UV', '90% do calor'],
+		topics: [
+			'Tecnologia de nano cerâmica para uma proposta mais premium e moderna.',
+			'Cancela 99% dos raios UV e reduz 90% do calor.',
+			'Transparência G70 com 70% de visibilidade.',
+		],
+	},
+	{
+		badge: 'WP',
+		title: 'Window Premium',
+		description:
+			'Opção voltada para clientes que querem elevar o padrão visual do carro com uma película de proposta mais refinada.',
+		highlights: ['Cancela 99% UV', '90% do calor'],
+	},
+	{
+		badge: 'CARB',
+		title: 'Carbon',
+		description:
+			'Alternativa com apelo moderno para quem deseja estilo, privacidade e uma presença visual mais marcante no automóvel.',
+		highlights: ['99% de UV', '50% de calor'],
+	},
+	{
+		badge: 'TRAD',
+		title: 'Insulfilm Tradicional',
+		description:
+			'Escolha prática para escurecimento dos vidros e renovação da aparência do veículo com aplicação profissional.',
+	},
+] as const;
+
 export const beforeAfterCategories = [
 	{
-		title: 'Martelinho de Ouro',
-		image: '/images/placeholders/before-after01.png',
-		description: 'Imagem adicionada para o primeiro caso de antes e depois.',
+		title: 'Antes',
+		image: '/images/placeholders/before.jpeg',
+		description: 'Imagem de antes adicionada para o comparativo visual do serviço.',
 	},
 	{
-		title: 'Película',
-		image: '/images/placeholders/before-after-placeholder.svg',
-		description: 'Placeholder visual para substituição posterior por imagens reais.',
-	},
-	{
-		title: 'Pintura',
-		image: '/images/placeholders/before-after-placeholder.svg',
-		description: 'Placeholder visual para substituição posterior por imagens reais.',
+		title: 'Depois',
+		image: '/images/placeholders/after.jpeg',
+		description: 'Imagem de depois adicionada para o comparativo visual do serviço.',
 	},
 ] as const;
 

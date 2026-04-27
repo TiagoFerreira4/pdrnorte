@@ -1,0 +1,20 @@
+<svg width="1600" height="900" viewBox="0 0 1600 900" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1600" height="900" fill="#070A10"/>
+  <rect width="1600" height="900" fill="url(#paint0_radial)"/>
+  <g opacity="0.22" stroke="white" stroke-width="2">
+    <path d="M214 95L286 137V221L214 263L142 221V137L214 95Z"/>
+    <path d="M358 95L430 137V221L358 263L286 221V137L358 95Z"/>
+    <path d="M286 221L358 263V347L286 389L214 347V263L286 221Z"/>
+    <path d="M1200 468L1272 510V594L1200 636L1128 594V510L1200 468Z"/>
+    <path d="M1344 468L1416 510V594L1344 636L1272 594V510L1344 468Z"/>
+    <path d="M1272 594L1344 636V720L1272 762L1200 720V636L1272 594Z"/>
+  </g>
+  <rect x="120" y="690" width="520" height="1" fill="white" fill-opacity="0.18"/>
+  <text x="120" y="760" fill="white" fill-opacity="0.78" font-family="Barlow, Arial, sans-serif" font-size="26" letter-spacing="10">ADICIONE A IMAGEM DO HERO DE PELICULAS AQUI</text>
+  <defs>
+    <radialGradient id="paint0_radial" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(1180 210) rotate(142.704) scale(736.771 421.339)">
+      <stop stop-color="#F4C542" stop-opacity="0.18"/>
+      <stop offset="1" stop-color="#070A10" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+</svg>

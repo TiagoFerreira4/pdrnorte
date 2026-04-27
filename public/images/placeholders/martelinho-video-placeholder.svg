@@ -1,0 +1,14 @@
+<svg width="1200" height="900" viewBox="0 0 1200 900" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="900" fill="#0A0D14"/>
+  <rect x="70" y="70" width="1060" height="760" rx="34" fill="url(#paint0_linear)" stroke="rgba(255,255,255,0.18)"/>
+  <circle cx="600" cy="410" r="82" fill="#F4C542" fill-opacity="0.22"/>
+  <path d="M567 356L670 410L567 464V356Z" fill="#F4C542"/>
+  <text x="120" y="705" fill="white" fill-opacity="0.92" font-family="Rajdhani, Arial, sans-serif" font-size="52" font-weight="700">VIDEO / FOTO DE DESTAQUE</text>
+  <text x="120" y="760" fill="white" fill-opacity="0.64" font-family="Barlow, Arial, sans-serif" font-size="28">Use este espaço para um antes e depois forte do Martelinho de Ouro</text>
+  <defs>
+    <linearGradient id="paint0_linear" x1="70" y1="70" x2="1130" y2="830" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#111723"/>
+      <stop offset="1" stop-color="#090C13"/>
+    </linearGradient>
+  </defs>
+</svg>

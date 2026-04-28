@@ -41,7 +41,7 @@ export const contactMessages = {
 export const serviceCards = [
   {
     badge: 'Saiba Mais',
-    title: 'Martelinho de Ouro / PDR',
+    title: 'Martelinho de Ouro',
     description:
       'Remoção de pequenos amassados sem pintura, preservando a originalidade do veículo sempre que possível.',
     href: '/martelinho-de-ouro',

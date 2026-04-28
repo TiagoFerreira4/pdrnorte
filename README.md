@@ -1,46 +1,82 @@
-# Astro Starter Kit: Basics
+# PDR Norte
 
-```sh
-pnpm create astro@latest -- --template basics
+Site institucional da PDR Norte, loja automotiva em Recife, com foco em geração de contatos via WhatsApp para orçamento de serviços.
+
+## Stack
+
+- Astro
+- TypeScript
+- Tailwind CSS
+
+## Escopo atual
+
+- Página inicial
+- Página de películas
+- Página de martelinho de ouro
+- Página de funilaria e pintura
+- Header, footer e componentes globais reutilizáveis
+- CTA principal via WhatsApp
+
+## Rotas
+
+- `/`
+- `/peliculas`
+- `/martelinho-de-ouro`
+- `/funilaria-e-pintura`
+
+## Desenvolvimento
+
+Instale as dependências:
+
+```bash
+pnpm install
 ```
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+Inicie o projeto em ambiente local:
 
-## 🚀 Project Structure
+```bash
+pnpm dev
+```
 
-Inside of your Astro project, you'll see the following folders and files:
+Build de produção:
+
+```bash
+pnpm build
+```
+
+Preview local do build:
+
+```bash
+pnpm preview
+```
+
+## Estrutura principal
 
 ```text
-/
-├── public/
-│   └── favicon.svg
-├── src
-│   ├── assets
-│   │   └── astro.svg
-│   ├── components
-│   │   └── Welcome.astro
-│   ├── layouts
-│   │   └── Layout.astro
-│   └── pages
-│       └── index.astro
-└── package.json
+src/
+  components/   Componentes reutilizáveis
+  data/         Conteúdo centralizado do site
+  layouts/      Layout global
+  pages/        Rotas da aplicação
+  styles/       Estilos globais
+
+public/
+  images/placeholders/  Imagens atuais do site
 ```
 
-To learn more about the folder structure of an Astro project, refer to [our guide on project structure](https://docs.astro.build/en/basics/project-structure/).
+## Conteúdo configurável
 
-## 🧞 Commands
+As informações centrais da aplicação ficam em `src/data/site.ts`, incluindo:
 
-All commands are run from the root of the project, from a terminal:
+- WhatsApp
+- Instagram
+- endereço
+- textos de contato
+- serviços
+- opções de películas
+- depoimentos
 
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `pnpm install`             | Installs dependencies                            |
-| `pnpm dev`             | Starts local dev server at `localhost:4321`      |
-| `pnpm build`           | Build your production site to `./dist/`          |
-| `pnpm preview`         | Preview your build locally, before deploying     |
-| `pnpm astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `pnpm astro -- --help` | Get help using the Astro CLI                     |
+## Observações
 
-## 👀 Want to learn more?
-
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+- O projeto é estático, sem backend e sem banco de dados.
+- O objetivo principal do site é conversão por WhatsApp.

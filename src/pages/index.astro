@@ -1,241 +1,268 @@
 ---
-import ServiceCard from '../components/ServiceCard.astro';
-import WhatsAppButton from '../components/WhatsAppButton.astro';
+import ServiceCard from '../components/ServiceCard.astro'
+import WhatsAppButton from '../components/WhatsAppButton.astro'
 import {
-	beforeAfterCategories,
-	contactMessages,
-	serviceCards,
-	siteConfig,
-	testimonials,
-} from '../data/site';
-import Layout from '../layouts/Layout.astro';
+  beforeAfterCategories,
+  contactMessages,
+  serviceCards,
+  siteConfig,
+  testimonials,
+} from '../data/site'
+import Layout from '../layouts/Layout.astro'
 ---
 
 <Layout
-	title={siteConfig.defaultTitle}
-	description={siteConfig.defaultDescription}
+  title={siteConfig.defaultTitle}
+  description={siteConfig.defaultDescription}
 >
-	<section id="inicio" class="scroll-mt-28">
-		<div class="hero-panel overflow-hidden">
-			<div class="mx-auto flex min-h-[100svh] max-w-7xl items-start px-4 pt-28 pb-16 sm:px-6 sm:pt-32 lg:px-8 lg:pt-36 lg:pb-24">
-					<div>
-						<p class="eyebrow mb-5">Recife • Martelinho de Ouro • Películas • Estética</p>
-						<h1 class="max-w-2xl text-4xl font-semibold tracking-[0.01em] text-white sm:text-5xl lg:text-7xl">
-							Martelinho de Ouro, Películas e Estética Automotiva em Recife
-						</h1>
-						<p class="mt-6 max-w-2xl text-base leading-7 text-slate-200 sm:text-lg">
-							Cuidamos do seu veículo com acabamento profissional, preservando a
-							originalidade, a estética e o valor do seu carro.
-						</p>
-						<div class="mt-8 flex flex-col gap-3 sm:flex-row">
-							<WhatsAppButton
-								label="Solicitar orçamento pelo WhatsApp"
-								message={contactMessages.quote}
-							/>
-							<a
-								class="inline-flex items-center justify-center rounded-full border border-white/15 bg-white/6 px-6 py-3 text-sm font-semibold tracking-[0.08em] text-white transition hover:border-brand-blue/50 hover:bg-white/10"
-								href="#servicos"
-							>
-								Conhecer serviços
-							</a>
-						</div>
-					</div>
-			</div>
-		</div>
-	</section>
+  <section id="inicio" class="scroll-mt-28">
+    <div class="hero-panel overflow-hidden">
+      <div
+        class="mx-auto flex min-h-[100svh] max-w-7xl items-start px-4 pt-28 pb-16 sm:px-6 sm:pt-32 lg:px-8 lg:pt-36 lg:pb-24"
+      >
+        <div>
+          <p class="eyebrow mb-5">
+            Recife • Martelinho de Ouro • Películas • Estética
+          </p>
+          <h1
+            class="max-w-2xl text-4xl font-semibold tracking-[0.01em] text-white sm:text-5xl lg:text-7xl"
+          >
+            Martelinho de Ouro, Películas e Estética Automotiva em Recife
+          </h1>
+          <p
+            class="mt-6 max-w-2xl text-base leading-7 text-slate-200 sm:text-lg"
+          >
+            Cuidamos do seu veículo com acabamento profissional, preservando a
+            originalidade, a estética e o valor do seu carro.
+          </p>
+          <div class="mt-8 flex flex-col gap-3 sm:flex-row">
+            <WhatsAppButton
+              label="Solicitar orçamento pelo WhatsApp"
+              message={contactMessages.quote}
+            />
+            <a
+              class="inline-flex items-center justify-center rounded-full border border-white/15 bg-white/6 px-6 py-3 text-sm font-semibold tracking-[0.08em] text-white transition hover:border-brand-blue/50 hover:bg-white/10"
+              href="#servicos"
+            >
+              Conhecer serviços
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
-	<section id="servicos" class="section-layer scroll-mt-28">
-		<div class="mx-auto max-w-7xl px-4 py-20 sm:px-6 lg:px-8">
-			<div class="max-w-2xl">
-				<p class="eyebrow">Nossos serviços</p>
-				<h2 class="mt-4 text-3xl font-semibold text-white sm:text-4xl">
-					Soluções automotivas com apresentação premium e foco em confiança.
-				</h2>
-				<p class="mt-4 text-base leading-7 text-slate-300">
-					A base abaixo já separa os principais serviços da PDR Norte para facilitar
-					uma futura expansão em páginas internas.
-				</p>
-			</div>
-			<div class="mt-10 grid gap-5 md:grid-cols-2 xl:grid-cols-3">
-				{
-					serviceCards.map((service) => (
-						<ServiceCard
-							badge={service.badge}
-							title={service.title}
-							description={service.description}
-							href={service.href}
-						/>
-					))
-				}
-			</div>
-		</div>
-	</section>
+  <section id="servicos" class="section-layer scroll-mt-28">
+    <div class="mx-auto max-w-7xl px-4 py-20 sm:px-6 lg:px-8">
+      <div class="max-w-2xl">
+        <p class="eyebrow">Nossos serviços</p>
+        <h2 class="mt-4 text-3xl font-semibold text-white sm:text-4xl">
+          Soluções automotivas com apresentação premium e foco em confiança.
+        </h2>
+        <p class="mt-4 text-base leading-7 text-slate-300">
+          Abaixo temos os principais serviços da PDR Norte.
+        </p>
+      </div>
+      <div class="mt-10 grid gap-5 md:grid-cols-2 xl:grid-cols-3">
+        {
+          serviceCards.map((service) => (
+            <ServiceCard
+              badge={service.badge}
+              title={service.title}
+              description={service.description}
+              href={service.href}
+            />
+          ))
+        }
+      </div>
+    </div>
+  </section>
 
-	<section id="window-blue" class="section-layer scroll-mt-28">
-		<div class="mx-auto max-w-7xl px-4 pb-20 sm:px-6 lg:px-8">
-			<div class="section-surface hex-surface relative overflow-hidden rounded-[2rem] p-8 sm:p-10 lg:p-14">
-				<div class="relative z-10 grid gap-6 lg:grid-cols-[1.18fr_0.82fr] lg:items-stretch lg:gap-6">
-					<div>
-						<p class="eyebrow">Aplicador Window Blue</p>
-						<h2 class="mt-4 text-3xl font-semibold text-white sm:text-4xl">
-							Autoridade visual para destacar películas de alta performance.
-						</h2>
-						<p class="mt-5 text-base leading-7 text-slate-300">
-							A PDR Norte trabalha com películas de alta performance, oferecendo
-							conforto térmico, privacidade e acabamento premium para o seu
-							veículo.
-						</p>
-						<a
-							class="mt-6 inline-flex items-center justify-center rounded-full border border-brand-blue/40 bg-brand-blue/12 px-6 py-3 text-sm font-semibold tracking-[0.08em] text-white transition hover:border-brand-blue hover:bg-brand-blue/20"
-							href="/peliculas"
-						>
-							Conhecer películas
-						</a>
-						<p class="mt-4 text-sm leading-6 text-slate-400">
-							A linha Window Blue também ganha uma página própria para apresentar
-							as opções de películas da loja.
-						</p>
-					</div>
-					<div class="flex justify-start lg:justify-end">
-						<div class="window-blue-logo-placeholder inline-flex items-center justify-center rounded-[1.5rem] p-0 text-center">
-							<img
-								class="block h-auto w-auto max-w-[16rem] rounded-[1.5rem] object-contain lg:max-w-[20rem]"
-								src="/images/placeholders/window-blue-logo.png"
-								alt="Logo Window Blue"
-								loading="lazy"
-							/>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</section>
+  <section id="window-blue" class="section-layer scroll-mt-28">
+    <div class="mx-auto max-w-7xl px-4 pb-20 sm:px-6 lg:px-8">
+      <div
+        class="section-surface hex-surface relative overflow-hidden rounded-[2rem] p-8 sm:p-10 lg:p-14"
+      >
+        <div
+          class="relative z-10 grid gap-6 lg:grid-cols-[1.18fr_0.82fr] lg:items-stretch lg:gap-6"
+        >
+          <div>
+            <p class="eyebrow">Aplicador Window Blue</p>
+            <h2 class="mt-4 text-3xl font-semibold text-white sm:text-4xl">
+              Aqui na PDR Norte trabalhamos com peliculas Window Blue
+              certificadas.
+            </h2>
+            <p class="mt-5 text-base leading-7 text-slate-300">
+              A PDR Norte trabalha com películas de alta performance, oferecendo
+              conforto térmico, privacidade e acabamento premium para o seu
+              veículo.
+            </p>
+            <a
+              class="mt-6 inline-flex items-center justify-center rounded-full border border-brand-blue/40 bg-brand-blue/12 px-6 py-3 text-sm font-semibold tracking-[0.08em] text-white transition hover:border-brand-blue hover:bg-brand-blue/20"
+              href="/peliculas"
+            >
+              Conhecer películas
+            </a>
+            <p class="mt-4 text-sm leading-6 text-slate-400"></p>
+          </div>
+          <div class="flex justify-start lg:justify-end">
+            <div
+              class="window-blue-logo-placeholder inline-flex items-center justify-center rounded-[1.5rem] p-0 text-center"
+            >
+              <img
+                class="block h-auto w-auto max-w-[16rem] rounded-[1.5rem] object-contain lg:max-w-[20rem]"
+                src="/images/placeholders/window-blue-logo.png"
+                alt="Logo Window Blue"
+                loading="lazy"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
-	<section id="antes-e-depois" class="section-layer scroll-mt-28">
-		<div class="mx-auto max-w-7xl px-4 pb-20 sm:px-6 lg:px-8">
-			<div class="flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
-				<div class="max-w-2xl">
-					<p class="eyebrow">Antes e depois</p>
-					<h2 class="mt-4 text-3xl font-semibold text-white sm:text-4xl">
-						Comparativo visual pronto para receber as duas imagens do serviço.
-					</h2>
-				</div>
-				<p class="max-w-xl text-sm leading-6 text-slate-400">
-					O primeiro card usa a imagem adicionada agora. O segundo fica como
-					placeholder até você incluir a foto de resultado.
-				</p>
-			</div>
-			<div class="mt-10 grid max-w-6xl gap-5 md:grid-cols-2">
-				{
-					beforeAfterCategories.map((category) => (
-						<article class="section-surface overflow-hidden rounded-[1.75rem]">
-							<img
-								class="h-72 w-full object-cover sm:h-80 lg:h-[30rem]"
-								src={category.image}
-								alt={`Imagem da galeria de ${category.title}`}
-								loading="lazy"
-							/>
-							<div class="px-5 py-5">
-								<h3 class="text-xl font-semibold text-white">{category.title}</h3>
-								<p class="mt-2 text-sm leading-6 text-slate-400">
-									{category.description}
-								</p>
-							</div>
-						</article>
-					))
-				}
-			</div>
-		</div>
-	</section>
+  <section id="antes-e-depois" class="section-layer scroll-mt-28">
+    <div class="mx-auto max-w-7xl px-4 pb-20 sm:px-6 lg:px-8">
+      <div
+        class="flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between"
+      >
+        <div class="max-w-2xl">
+          <p class="eyebrow">Antes e depois</p>
+          <h2 class="mt-4 text-3xl font-semibold text-white sm:text-4xl">
+            Amassado visível na lataria antes do reparo.
+          </h2>
+        </div>
+        <p class="max-w-xl text-sm leading-6 text-slate-400"></p>
+      </div>
+      <div class="mt-10 grid max-w-6xl gap-5 md:grid-cols-2">
+        {
+          beforeAfterCategories.map((category) => (
+            <article class="section-surface overflow-hidden rounded-[1.75rem]">
+              <img
+                class="h-72 w-full object-cover sm:h-80 lg:h-[30rem]"
+                src={category.image}
+                alt={`Imagem da galeria de ${category.title}`}
+                loading="lazy"
+              />
+              <div class="px-5 py-5">
+                <h3 class="text-xl font-semibold text-white">
+                  {category.title}
+                </h3>
+                <p class="mt-2 text-sm leading-6 text-slate-400">
+                  {category.description}
+                </p>
+              </div>
+            </article>
+          ))
+        }
+      </div>
+    </div>
+  </section>
 
-	<section id="depoimentos" class="section-layer scroll-mt-28">
-		<div class="mx-auto max-w-7xl px-4 pb-20 sm:px-6 lg:px-8">
-			<div class="max-w-2xl">
-				<p class="eyebrow">Depoimentos</p>
-				<h2 class="mt-4 text-3xl font-semibold text-white sm:text-4xl">
-					Bloco preparado para futuras avaliações reais.
-				</h2>
-			</div>
-			<div class="mt-10 grid gap-5 lg:grid-cols-3">
-				{
-					testimonials.map((testimonial) => (
-						<article class="section-surface rounded-[1.75rem] p-6">
-							<p class="text-xs font-semibold uppercase tracking-[0.28em] text-amber-300/90">
-								Placeholder
-							</p>
-							<p class="mt-5 text-base leading-7 text-slate-200">
-								“{testimonial.quote}”
-							</p>
-							<div class="mt-6 border-t border-white/10 pt-5">
-								<p class="font-display text-xl font-semibold text-white">
-									{testimonial.name}
-								</p>
-								<p class="mt-1 text-sm text-slate-400">{testimonial.detail}</p>
-							</div>
-						</article>
-					))
-				}
-			</div>
-		</div>
-	</section>
+  <section id="depoimentos" class="section-layer scroll-mt-28">
+    <div class="mx-auto max-w-7xl px-4 pb-20 sm:px-6 lg:px-8">
+      <div class="max-w-2xl">
+        <p class="eyebrow">Depoimentos</p>
+        <h2 class="mt-4 text-3xl font-semibold text-white sm:text-4xl">
+          Avaliações dos nossos clientes passados!
+        </h2>
+      </div>
+      <div class="mt-10 grid gap-5 lg:grid-cols-3">
+        {
+          testimonials.map((testimonial) => (
+            <article class="section-surface rounded-[1.75rem] p-6">
+              <p class="text-xs font-semibold uppercase tracking-[0.28em] text-amber-300/90">
+                Clientes
+              </p>
+              <p class="mt-5 text-base leading-7 text-slate-200">
+                “{testimonial.quote}”
+              </p>
+              <div class="mt-6 border-t border-white/10 pt-5">
+                <p class="font-display text-xl font-semibold text-white">
+                  {testimonial.name}
+                </p>
+                <p class="mt-1 text-sm text-slate-400">{testimonial.detail}</p>
+              </div>
+            </article>
+          ))
+        }
+      </div>
+    </div>
+  </section>
 
-	<section id="localizacao" class="section-layer scroll-mt-28">
-		<div class="mx-auto max-w-7xl px-4 pb-20 sm:px-6 lg:px-8">
-			<div class="grid gap-6 lg:grid-cols-[0.82fr_1.18fr]">
-				<div class="section-surface rounded-[2rem] p-8">
-					<p class="eyebrow">Localização</p>
-					<h2 class="mt-4 text-3xl font-semibold text-white sm:text-4xl">
-						Veja onde a PDR Norte está localizada e trace sua rota.
-					</h2>
-					<p class="mt-5 text-base leading-7 text-slate-300">{siteConfig.address}</p>
-					<p class="mt-4 text-sm leading-6 text-slate-400">
-						Use o mapa ao lado para visualizar a região da loja e abrir a rota no
-						Google Maps.
-					</p>
-					<a
-						class="mt-8 inline-flex items-center justify-center rounded-full border border-white/15 bg-white/6 px-6 py-3 text-sm font-semibold tracking-[0.08em] text-white transition hover:border-brand-blue/50 hover:bg-white/10"
-						href={siteConfig.mapsUrl}
-						target="_blank"
-						rel="noreferrer"
-					>
-						Ver rota no Google Maps
-					</a>
-				</div>
-				<div class="map-embed rounded-[2rem] border border-white/10">
-					<iframe
-						class="h-full min-h-[22rem] w-full lg:min-h-[30rem]"
-						src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3950.5977766246356!2d-34.88971652316589!3d-8.040337580296583!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x7aaef5ca7cf745f%3A0xff10e9adf8989cf5!2sPDR%20Norte%20Martelinho%20de%20Ouro%20%26%20Insulfilm%20Fum%C3%AA!5e0!3m2!1spt-BR!2sbr!4v1777329053530!5m2!1spt-BR!2sbr"
-						style="border:0;"
-						allowfullscreen
-						loading="lazy"
-						referrerpolicy="no-referrer-when-downgrade"
-						title="Mapa da PDR Norte no Google Maps"
-					></iframe>
-				</div>
-			</div>
-		</div>
-	</section>
+  <section id="localizacao" class="section-layer scroll-mt-28">
+    <div class="mx-auto max-w-7xl px-4 pb-20 sm:px-6 lg:px-8">
+      <div class="grid gap-6 lg:grid-cols-[0.82fr_1.18fr]">
+        <div class="section-surface rounded-[2rem] p-8">
+          <p class="eyebrow">Localização</p>
+          <h2 class="mt-4 text-3xl font-semibold text-white sm:text-4xl">
+            Veja onde a PDR Norte está localizada e trace sua rota.
+          </h2>
+          <p class="mt-5 text-base leading-7 text-slate-300">
+            {siteConfig.address}
+          </p>
+          <p class="mt-4 text-sm leading-6 text-slate-400">
+            Use o mapa ao lado para visualizar a região da loja e abrir a rota
+            no Google Maps.
+          </p>
+          <a
+            class="mt-8 inline-flex items-center justify-center rounded-full border border-white/15 bg-white/6 px-6 py-3 text-sm font-semibold tracking-[0.08em] text-white transition hover:border-brand-blue/50 hover:bg-white/10"
+            href={siteConfig.mapsUrl}
+            target="_blank"
+            rel="noreferrer"
+          >
+            Ver rota no Google Maps
+          </a>
+        </div>
+        <div class="map-embed rounded-[2rem] border border-white/10">
+          <iframe
+            class="h-full min-h-[22rem] w-full lg:min-h-[30rem]"
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3950.5977766246356!2d-34.88971652316589!3d-8.040337580296583!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x7aaef5ca7cf745f%3A0xff10e9adf8989cf5!2sPDR%20Norte%20Martelinho%20de%20Ouro%20%26%20Insulfilm%20Fum%C3%AA!5e0!3m2!1spt-BR!2sbr!4v1777329053530!5m2!1spt-BR!2sbr"
+            style="border:0;"
+            allowfullscreen
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+            title="Mapa da PDR Norte no Google Maps"></iframe>
+        </div>
+      </div>
+    </div>
+  </section>
 
-	<section id="contato" class="section-layer scroll-mt-28">
-		<div class="mx-auto max-w-7xl px-4 pb-24 sm:px-6 lg:px-8">
-			<div class="section-surface hex-surface rounded-[2rem] px-8 py-10 sm:px-10 lg:px-14 lg:py-14">
-				<div class="flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between">
-					<div class="max-w-2xl">
-						<p class="eyebrow">CTA final</p>
-						<h2 class="mt-4 text-3xl font-semibold text-white sm:text-4xl">
-							Quer avaliar seu veículo?
-						</h2>
-						<p class="mt-4 text-base leading-7 text-slate-300">
-							Envie fotos pelo WhatsApp e receba uma orientação inicial da equipe
-							PDR Norte.
-						</p>
-					</div>
-					<WhatsAppButton
-						label="Chamar no WhatsApp"
-						message={contactMessages.vehiclePhotos}
-					/>
-				</div>
-			</div>
-		</div>
-	</section>
+  <section id="contato" class="section-layer scroll-mt-28">
+    <div class="mx-auto max-w-7xl px-4 pb-24 sm:px-6 lg:px-8">
+      <div
+        class="section-surface hex-surface rounded-[2rem] px-8 py-10 sm:px-10 lg:px-14 lg:py-14"
+      >
+        <div
+          class="flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between"
+        >
+          <div class="max-w-2xl">
+            <p class="eyebrow">Entre em contato</p>
+            <h2 class="mt-4 text-3xl font-semibold text-white sm:text-4xl">
+              Quer avaliar seu veículo?
+            </h2>
+            <p class="mt-4 text-base leading-7 text-slate-300">
+              Envie fotos pelo WhatsApp e receba uma orientação inicial da
+              equipe PDR Norte.
+            </p>
+          </div>
+          <div class="flex flex-col gap-3 sm:flex-row">
+            <WhatsAppButton
+              label="Chamar no WhatsApp"
+              message={contactMessages.vehiclePhotos}
+            />
+            <a
+              class="inline-flex items-center justify-center rounded-full border border-white/15 bg-white/6 px-6 py-3 text-sm font-semibold tracking-[0.08em] text-white transition hover:border-brand-blue/50 hover:bg-white/10"
+              href={siteConfig.instagramUrl}
+              target="_blank"
+              rel="noreferrer"
+            >
+              Ver no Instagram
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 </Layout>

@@ -107,6 +107,7 @@ summary::-webkit-details-marker {
 .hero-panel::before,
 .peliculas-hero-panel::before,
 .martelinho-hero-panel::before,
+.funilaria-hero-panel::before,
 .hex-surface::before {
 	content: "";
 	position: absolute;
@@ -147,9 +148,23 @@ summary::-webkit-details-marker {
 	opacity: 0.14;
 }
 
+.funilaria-hero-panel {
+	position: relative;
+	isolation: isolate;
+	background:
+		linear-gradient(90deg, rgba(5, 7, 11, 0.94) 0%, rgba(5, 7, 11, 0.74) 42%, rgba(5, 7, 11, 0.36) 100%),
+		linear-gradient(180deg, rgba(5, 7, 11, 0.14) 0%, rgba(5, 7, 11, 0.72) 100%),
+		url('/images/placeholders/funilaria-hero.jpg') center/cover no-repeat;
+}
+
+.funilaria-hero-panel::before {
+	opacity: 0.14;
+}
+
 .hero-panel > *,
 .peliculas-hero-panel > *,
-.martelinho-hero-panel > * {
+.martelinho-hero-panel > *,
+.funilaria-hero-panel > * {
 	position: relative;
 	z-index: 1;
 }

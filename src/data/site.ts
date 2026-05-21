@@ -1,7 +1,7 @@
 export const siteConfig = {
   name: 'PDR Norte',
   defaultTitle:
-    'PDR Norte | Martelinho de Ouro, Películas e Estética Automotiva em Recife',
+    'PDR Norte | Martelinho de Ouro, Películas e Acessórios Automotivos em Recife',
   defaultDescription:
     'Site institucional da PDR Norte com foco em geração de contatos pelo WhatsApp para serviços automotivos em Recife.',
   whatsappNumber: '5581996840486',
@@ -26,10 +26,10 @@ export const navigationItems = [
 export const contactMessages = {
   quote:
     'Olá! Vim pelo site da PDR Norte e gostaria de solicitar um orçamento.',
-  funilaria:
-    'Olá! Vim pela página de Funilaria e Pintura da PDR Norte e gostaria de solicitar um orçamento.',
-  funilariaPhotos:
-    'Olá! Vim pela página de Funilaria e Pintura da PDR Norte e quero enviar fotos para avaliação.',
+  acessorios:
+    'Olá! Vim pela página de Acessórios Automotivos da PDR Norte e gostaria de solicitar um orçamento.',
+  acessoriosPhotos:
+    'Olá! Vim pela página de Acessórios Automotivos da PDR Norte e quero enviar fotos do meu veículo para avaliação.',
   martelinho:
     'Olá! Vim pela página de Martelinho de Ouro da PDR Norte e gostaria de solicitar um orçamento.',
   peliculas:
@@ -55,25 +55,29 @@ export const serviceCards = [
   },
   {
     badge: 'Saiba Mais',
-    title: 'Funilaria e Pintura',
+    title: 'Acessórios Automotivos',
     description:
-      'Reparos de lataria, correção de avarias e pintura automotiva para recuperar o visual do veículo.',
-    href: '/funilaria-e-pintura',
+      'LED, multimídia, soleira, sensor de ré, câmera, farol, tapetes e som automotivo para equipar seu veículo.',
+    href: '/acessorios',
   },
 ] as const
 
-export const funilariaIndications = [
-  'Batidas e colisões',
-  'Amassados profundos',
-  'Pintura descascada ou riscada',
-  'Peças desalinhadas',
+export const acessoriosOptions = [
+  'LED',
+  'Multimídia',
+  'Soleira',
+  'Sensor de ré',
+  'Câmera',
+  'Farol',
+  'Tapetes',
+  'Som automotivo',
 ] as const
 
-export const funilariaBenefits = [
-  'Recupera o visual do carro',
-  'Corrige danos estruturais',
-  'Melhora valorização do veículo',
-  'Acabamento profissional',
+export const acessoriosBenefits = [
+  'Mais praticidade no dia a dia',
+  'Visual mais completo para o veículo',
+  'Instalação com acabamento cuidadoso',
+  'Orientação para escolher o acessório ideal',
 ] as const
 
 export const martelinhoIndications = [

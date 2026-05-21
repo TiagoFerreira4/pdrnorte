@@ -1,0 +1,202 @@
+---
+import WhatsAppButton from '../components/WhatsAppButton.astro'
+import {
+  acessoriosBenefits,
+  acessoriosOptions,
+  contactMessages,
+  siteConfig,
+} from '../data/site'
+import Layout from '../layouts/Layout.astro'
+---
+
+<Layout
+  title="Acessórios Automotivos em Recife | PDR Norte"
+  description="Conheça acessórios automotivos na PDR Norte em Recife: LED, multimídia, soleira, sensor de ré, câmera, farol, tapetes e som automotivo."
+>
+  <section class="scroll-mt-28">
+    <div class="acessorios-hero-panel overflow-hidden border-b border-white/8">
+      <div
+        class="mx-auto flex min-h-[100svh] max-w-7xl items-start px-4 pt-28 pb-16 sm:px-6 sm:pt-32 lg:px-8 lg:pt-36 lg:pb-24"
+      >
+        <div class="max-w-3xl">
+          <p class="eyebrow">Acessórios automotivos</p>
+          <h1
+            class="mt-5 text-4xl font-semibold tracking-[0.01em] text-white sm:text-5xl lg:text-7xl"
+          >
+            Acessórios Automotivos em Recife
+          </h1>
+          <p
+            class="mt-6 max-w-2xl text-base leading-7 text-slate-200 sm:text-lg"
+          >
+            Equipe seu veículo com acessórios que melhoram o visual, a
+            praticidade e a experiência de uso, sempre com orientação e
+            acabamento cuidadoso.
+          </p>
+          <div class="mt-8 flex flex-col gap-3 sm:flex-row">
+            <WhatsAppButton
+              label="Solicitar orçamento"
+              message={contactMessages.acessorios}
+            />
+            <a
+              class="inline-flex items-center justify-center rounded-full border border-white/15 bg-white/6 px-6 py-3 text-sm font-semibold tracking-[0.08em] text-white transition hover:border-brand-blue/50 hover:bg-white/10"
+              href="#opcoes"
+            >
+              Ver acessórios
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="opcoes" class="section-layer scroll-mt-28">
+    <div class="mx-auto max-w-7xl px-4 py-20 sm:px-6 lg:px-8">
+      <div class="max-w-3xl">
+        <p class="eyebrow">Opções da loja</p>
+        <h2 class="mt-4 text-3xl font-semibold text-white sm:text-4xl">
+          Acessórios para completar o seu veículo.
+        </h2>
+        <p class="mt-4 text-base leading-7 text-slate-300">
+          A PDR Norte trabalha com itens para quem quer mais tecnologia,
+          conforto, segurança e acabamento no carro.
+        </p>
+      </div>
+      <div class="mt-10 grid gap-5 md:grid-cols-2 xl:grid-cols-4">
+        {
+          acessoriosOptions.map((item) => (
+            <article class="section-surface rounded-[1.75rem] p-6 transition hover:-translate-y-1 hover:border-brand-blue/28 hover:bg-white/9">
+              <h3 class="text-2xl font-semibold text-white">{item}</h3>
+            </article>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+
+  <section class="section-layer scroll-mt-28">
+    <div class="mx-auto max-w-7xl px-4 pb-20 sm:px-6 lg:px-8">
+      <div class="grid gap-6 lg:grid-cols-2">
+        <article
+          class="section-surface hex-surface rounded-[2rem] p-8 sm:p-10 lg:p-12"
+        >
+          <p class="eyebrow">Tecnologia e praticidade</p>
+          <h2 class="mt-4 text-3xl font-semibold text-white sm:text-4xl">
+            Multimídia, câmera, sensor de ré e som para melhorar o uso do carro.
+          </h2>
+          <p class="mt-5 text-base leading-8 text-slate-300">
+            A loja orienta a escolha dos acessórios conforme o veículo e o
+            objetivo do cliente, buscando uma instalação funcional e bem
+            acabada.
+          </p>
+        </article>
+
+        <article class="section-surface rounded-[2rem] p-8 sm:p-10 lg:p-12">
+          <p class="eyebrow">Visual e acabamento</p>
+          <h2 class="mt-4 text-3xl font-semibold text-white sm:text-4xl">
+            LED, farol, soleira e tapetes para valorizar a apresentação.
+          </h2>
+          <p class="mt-5 text-base leading-8 text-slate-300">
+            Além da parte funcional, os acessórios ajudam a deixar o veículo com
+            aparência mais completa e alinhada ao estilo de cada cliente.
+          </p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-layer scroll-mt-28">
+    <div class="mx-auto max-w-7xl px-4 pb-20 sm:px-6 lg:px-8">
+      <div class="section-surface rounded-[2rem] p-8 sm:p-10 lg:p-14">
+        <div class="max-w-3xl">
+          <p class="eyebrow">Benefícios</p>
+          <h2 class="mt-4 text-3xl font-semibold text-white sm:text-4xl">
+            Mais conforto, estilo e utilidade com acabamento profissional.
+          </h2>
+        </div>
+        <div class="mt-10 grid gap-4 md:grid-cols-2 xl:grid-cols-4">
+          {
+            acessoriosBenefits.map((benefit) => (
+              <div class="rounded-[1.5rem] border border-white/10 bg-white/5 px-5 py-5 text-sm font-medium leading-7 text-slate-200">
+                {benefit}
+              </div>
+            ))
+          }
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-layer scroll-mt-28">
+    <div class="mx-auto max-w-7xl px-4 pb-20 sm:px-6 lg:px-8">
+      <div
+        class="section-surface hex-surface rounded-[2rem] p-8 sm:p-10 lg:p-14"
+      >
+        <div class="grid gap-8 lg:grid-cols-[1.08fr_0.92fr] lg:items-center">
+          <div class="max-w-3xl">
+            <p class="eyebrow">Atendimento</p>
+            <h2 class="mt-4 text-3xl font-semibold text-white sm:text-4xl">
+              Envie o modelo do veículo e o acessório desejado.
+            </h2>
+            <p class="mt-5 text-base leading-8 text-slate-300">
+              Com essas informações, a equipe consegue orientar disponibilidade,
+              compatibilidade e próximos passos para o orçamento.
+            </p>
+          </div>
+          <div class="section-surface rounded-[1.75rem] p-6 sm:p-8">
+            <p class="eyebrow">Avaliação</p>
+            <h3 class="mt-4 text-2xl font-semibold text-white">
+              Envie fotos para orientação
+            </h3>
+            <p class="mt-4 text-sm leading-7 text-slate-300">
+              As fotos ajudam a identificar o veículo e entender melhor o tipo
+              de acessório que você quer instalar.
+            </p>
+            <div class="mt-6">
+              <WhatsAppButton
+                label="Enviar fotos pelo WhatsApp"
+                message={contactMessages.acessoriosPhotos}
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-layer scroll-mt-28">
+    <div class="mx-auto max-w-7xl px-4 pb-24 sm:px-6 lg:px-8">
+      <div
+        class="section-surface hex-surface rounded-[2rem] px-8 py-10 sm:px-10 lg:px-14 lg:py-14"
+      >
+        <div
+          class="flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between"
+        >
+          <div class="max-w-2xl">
+            <p class="eyebrow">Contato</p>
+            <h2 class="mt-4 text-3xl font-semibold text-white sm:text-4xl">
+              Quer equipar seu veículo?
+            </h2>
+            <p class="mt-4 text-base leading-7 text-slate-300">
+              Fale com a equipe da PDR Norte pelo WhatsApp ou acompanhe o
+              Instagram da loja para conhecer mais do padrão de acabamento.
+            </p>
+          </div>
+          <div class="flex flex-col gap-3 sm:flex-row">
+            <WhatsAppButton
+              label="Pedir orçamento"
+              message={contactMessages.acessorios}
+            />
+            <a
+              class="inline-flex items-center justify-center rounded-full border border-white/15 bg-white/6 px-6 py-3 text-sm font-semibold tracking-[0.08em] text-white transition hover:border-brand-blue/50 hover:bg-white/10"
+              href={siteConfig.instagramUrl}
+              target="_blank"
+              rel="noreferrer"
+            >
+              Ver Instagram
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</Layout>

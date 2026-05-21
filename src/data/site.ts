@@ -6,8 +6,8 @@ export const siteConfig = {
     'Site institucional da PDR Norte com foco em geração de contatos pelo WhatsApp para serviços automotivos em Recife.',
   whatsappNumber: '5581996840486',
   whatsappLabel: '+55 81 99684-0486',
-  instagramUrl: 'https://instagram.com/diegopdrnorte',
-  instagramLabel: '@diegopdrnorte',
+  instagramUrl: 'https://instagram.com/pdrnorte',
+  instagramLabel: '@pdrnorte',
   address:
     'Av. Norte Miguel Arraes de Alencar, 1795, Loja 5 e 6 - Espinheiro, Recife - PE, 52021-000',
   mapsUrl:

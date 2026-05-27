@@ -13,6 +13,46 @@ const {
 	title = siteConfig.defaultTitle,
 	description = siteConfig.defaultDescription,
 } = Astro.props;
+
+const siteUrl = 'https://www.pdrnorte.com.br';
+const localBusinessSchema = {
+	'@context': 'https://schema.org',
+	'@type': 'LocalBusiness',
+	'@id': siteUrl,
+	name: siteConfig.name,
+	description: siteConfig.defaultDescription,
+	url: siteUrl,
+	telephone: siteConfig.whatsappLabel,
+	image: `${siteUrl}/images/placeholders/logo-pdr-norte.jpg`,
+	sameAs: [siteConfig.instagramUrl],
+	address: {
+		'@type': 'PostalAddress',
+		streetAddress: 'Av. Norte Miguel Arraes de Alencar, 1795, Loja 5 e 6',
+		addressLocality: 'Recife',
+		addressRegion: 'PE',
+		postalCode: '52021-000',
+		addressCountry: 'BR',
+	},
+	geo: {
+		'@type': 'GeoCoordinates',
+		latitude: -8.040337580296583,
+		longitude: -34.88971652316589,
+	},
+	openingHoursSpecification: [
+		{
+			'@type': 'OpeningHoursSpecification',
+			dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'],
+			opens: '08:00',
+			closes: '17:00',
+		},
+		{
+			'@type': 'OpeningHoursSpecification',
+			dayOfWeek: 'Saturday',
+			opens: '08:00',
+			closes: '14:00',
+		},
+	],
+};
 ---
 
 <!doctype html>
@@ -28,6 +68,7 @@ const {
 		<meta property="og:title" content={title} />
 		<meta property="og:description" content={description} />
 		<meta property="og:locale" content="pt_BR" />
+		<script type="application/ld+json" set:html={JSON.stringify(localBusinessSchema)} />
 	</head>
 	<body class="selection:bg-brand-blue/30 selection:text-black">
 		<div
